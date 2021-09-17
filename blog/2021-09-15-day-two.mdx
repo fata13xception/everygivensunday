@@ -1,0 +1,56 @@
+---
+slug: day-two
+title: Day Two
+authors: [rmarens]
+tags: [markdown, styling, infima, search, plugins, react, mdx, jsx]
+---
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+Spent the day digesting tutorial videos and articles while, among other things, messing with the `pages/index.js` home page and its `pages/index.module.css` styling, and the general `/docusaurus.config.js` options.
+
+---
+
+Docusaurus uses **[Infima](https://infima.dev/)** for [styling its light and dark themes](https://docusaurus.io/docs/styling-layout), is customized in the `src/css/custom.css` file.
+
+I've commented-out the <Highlight color="#25c2a0">Docusaurus green</Highlight> for the time being, reverting it to what appears to be a default <Highlight color="#1877F2">Facebook blue</Highlight>. We'll need to put some thought into what color-scheme defines our products, our logo, and/or what looks pleasing.
+
+While on the subject of colors and styling, we need to nail down the ShowCase Docs site's scope. If purely focused on release notes and related blog entries, perhaps it's best if we keep the `pages/index.js` home page as simple as possible.
+
+Docusaurus' [Site ShowCase](https://docusaurus.io/showcase) has some really nice examples of simple/minimalistic home pages. I think *less is more* if my understanding of this site's purpose is correct.
+
+- https://botonic.io/
+- https://developer.smash.gg/
+- https://callstack.github.io/react-native-testing-library/
+
+Main thing I'm trying to do is make the home page look good... perhaps an image on the left/right with some minimalistic title and tagline...
+
+---
+
+I took the **[docusaurus-lunr-search](https://github.com/lelouch77/docusaurus-lunr-search)** plugin for a spin and... success! Bonus points for the nice default styling and the -- what I believe to be -- useful way of displaying results.
+
+:::info search testing
+
+The **docusaurus-lunr-search** `README.md` states:
+
+> Note: Docusaurus search information can only be generated from a production build. Local development is currently not supported.
+
+Therefore, testing the search will require you to serve the application locally. 
+
+|✔ DO This|❌ NOT This|
+|---|---|
+|npm run serve|npm run start|
+
+Prior to serving, however, we must build it and then refresh the browser's cache for new content to appear in search results.
+
+:::
