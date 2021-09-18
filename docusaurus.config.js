@@ -39,7 +39,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         // title: 'Home',
         logo: {
           alt: 'Ever Given Sunday Logo',
-          src: 'img/egs-logo.svg',
+          src: 'img/egs-logo-c.svg',
         },
         items: [
           {
